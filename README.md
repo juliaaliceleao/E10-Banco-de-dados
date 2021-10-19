@@ -1,68 +1,36 @@
-# Banco de Dados: Sistema Bibliotecário
+# Banco de Dados: Sistema Bancário
 
-O departamento bibliotecário (B.U.) do COLTEC requisitou ao setor de informática (S.I.) o desenvolvimento de um sistema interno para controle dos empréstimos realizados pela biblioteca.
+Um grande banco brasileiro requisitou a sua equipe o desenvolvimento de um sistema de internet banking para que os usuários possam acessar os dados de suas contas.
 
-Antes de iniciar o desenvolvimento do sistema em si, o setor de informática se reuniu com o bibliotecário responsável para entender melhor quais dados, de fato, o sistema irá gerenciar. Finalizada a reunião, o setor fez o levantamento das seguintes informações:
+Antes de iniciar o desenvolvimento do sistema em si, sua equipe se reuniu com o gerente de produto responsável por levantar as informações do sistema para entender melhor quais dados serão gerenciados. 
+Finalizada a reunião, foi definido que o sistema deverá ser capaz de gerenciar o saldo e movimentações financeiras entre as contas dos diversos clientes do banco.
 
-* O sistema deverá gerenciar os ativos da biblioteca, como os empréstimos realizados ao longo do tempo.
-* Foi identificado a necessidade de armazenamento dos seguintes dados:
-  * **Bibliotecas:** Dados das filiais da biblioteca existentes dentro da universidade
-  * **Livros:** Dados dos livros que compõe o acervo da biblioteca
-  * **Usuários:** Dados dos usuários cadastrados no B.U.
-  * **Exemplares:** Dados dos exemplares dos livros que a biblioteca empresta a seus usuários
-  * **Empréstimos:** Relação dos empréstimos de exemplares realizados entre os usuários e uma unidade da biblioteca
+Para isso, foi identificado a necessidade de armazenamento dos seguintes dados:
+* Clientes: dados pessoais dos clientes do banco
+* Agências: dados das agências pertencentes aos bancos
+* Contas: dados das contas bancárias existentes dentro do banco
+* Transações: Histórico de transações realizadas nas contas do banco
 
-Foi levantado também quais informarções deverão ser armazenadas para os dados levantados acima:
+Foi levantado também quais informações deverão ser armazenadas para os dados levantados acima:
+* Clientes: Nome, CPF, data de nascimento, endereço residencial, telefone de contato
+* Agências: Código da agência, nome, endereço, data de criação
+* Contas: Código da conta, agência detentora da conta, dono da conta, saldo, tipo da conta
+* Transações: Tipo da transação, conta de origem, valor
 
-* **Bibliotecas:** Nome e Endereço
-* **Livros:** Nome, autor, editora, ISBN e tema
-* **Usuários:** Nome, e-mail e curso
-* **Exemplares:** Livro do qual o exemplar pertence, Biblioteca onde o exemplar foi cadastrado, edição, ano de publicação e número de páginas
-* **Empréstimos:** Os exemplar que foi pedido no empréstimo, o usuário que requisitou o empréstimo, a biblioteca onde o empréstimo foi feito, a data de empréstimo e data de devolução
+Por fim, foi listado os seguintes relacionamentos entre os dados levantados:
 
-Ainda, foi catalogada a seguinte relação entre os dados levantados:
+* Um cliente pode ter uma ou mais contas
+* Uma conta pertence necessáriamente a uma agência
+* Uma agência pode ter várias contas
+* As transações podem ser de duas naturezas: depósito ou saque
+* Uma conta pode ter várias transações
+* Uma transação parte necessáriamente de uma conta
 
-* Um exemplar pertence a uma biblioteca
-* Uma biblioteca pode ter vários exemplares
-* Um exemplar pertence somente a um livro
-* Um livro pode ter vários exemplares
-* Um empréstimo é feito apenas por um usuário
-* Um usuário pode fazer vários empréstimos
-* Um empréstimo envolve apenas um exemplar
-* Um exemplar pode ser emprestado várias vezes
-* Um empréstimo é feito sempre em uma biblioteca
-* Uma biblioteca pode fazer vários empréstimos
 
-## Modelo dos dados
+## 01: Modelo Entidade-Relacionamento
 
-Com base nas informações descritas acima, foi pedido que você gere os diagramas DER e DR do sistema bibliotecário. Para o DER use o software [TerraER](http://www.terraer.com.br/). Já para o diagrama DR, utilize o [MySQL Workbench](https://www.mysql.com/products/workbench/).
+Com base nas informações descritas acima, foi pedido que você gere o Diagrama Entidade-Relacionamento que represente os dados descritos acima. 
+Para desenho do DER, você pode utilizar um dos seguintes softwares:
 
-## Trabalhando com a linguagem SQL
-
-### Criando a estrutura do banco de dados
-
-Agora que o modelo do sistema está pronto, é hora de criar sua estrutura no SGBD!! Utilize os comandos aprendidos na aula para criar a estrutura do banco de dados. Você deverá entregar os scripts SQL utilizados para criação do banco.
-
-### Inserindo novos registros
-
-Popule o banco de dados com **informações reais** de bibliotecas, livros, exemplares, usuários e empréstimos. Seu banco de dados deverá ter, pelo menos:
-
-* 4 bibliotecas
-* 10 usuários
-* 3 livros
-* 10 exemplares
-* 8 empréstimos
-
-### Realizando consultas no SGBD
-
-Com os dados cadastrados, implemente o código SQL que realize as consultas abaixo:
-
-1. Listar o nome de todas as bibliotecas
-1. Listar o nome de todos os usuários do curso de informática
-1. Listar o nome e autor dos livros de computação
-1. Listar os exemplares que foram publicados após os anos de 2010
-1. Listar os exemplares cadastrados na biblioteca central
-1. Listar todos os empréstimos realizados pelo usuário 'João'
-1. Listar os empréstimos de 'João' feitos na biblioteca central
-1. Listar o nome dos exemplares que foram emprestados pelo menos uma vez (procure saber sobre o comando DISTINCT)
-1. Listar as bibliotecas  que realizarem empréstimos pelo menos uma vez (procure saber sobre o comando DISTINCT)
+* [TerraER](http://www.terraer.com.br/)
+* [draw.io](https://app.diagrams.net/)
