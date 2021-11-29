@@ -34,3 +34,44 @@ Para desenho do DER, você pode utilizar um dos seguintes softwares:
 
 * [TerraER](http://www.terraer.com.br/)
 * [draw.io](https://app.diagrams.net/)
+
+## 02: Modelo Relacional
+
+Com base no Modelo Entidade Relacionamento implementado, desenhe o Diagrama Relacional da respectiva base de dados.
+Para o desenho do DR, utilize o software [MySQL Workbench](https://www.mysql.com/products/workbench/).
+
+## 03: SQL
+
+### Estrutura do SGBD
+
+Agora que o modelo do sistema está pronto, é hora de criar sua estrutura no SGBD!! 
+Utilize os comandos aprendidos na aula para criar a estrutura do banco de dados. 
+Você deverá entregar os scripts SQL utilizados para criação do banco.
+
+### Inserindo novos dados
+
+Popule o banco de dados com **informações reais** de Clientes, Agências, Contas, e Transações. 
+Seu banco de dados deverá ter, pelo menos:
+
+* 3 clientes
+* agências
+* 2 contas
+* 10 transações
+
+Você deverá entregar os scripts SQL utilizados para criação do banco.
+
+### Realizando consultas
+
+Com os dados cadastrados, implemente o código SQL que realize as consultas abaixo:
+
+1. Listar o nome de todos os clientes
+1. Listar o nome de todas as agências criadas após 2020
+1. Listar as contas que são poupança
+1. Listar as contas criadas na agência central
+1. Listar as transações realizadas a partir da conta do 'João'
+1. Listar as transações realizadas pelo 'João' para a conta do 'Pedro'
+1. Listar as agências que possuem pelo menos 3 contas
+1. Listar as contas com pelo menos 4 transações
+1. Listar os clientes que não realizaram transações 
+
+Você deverá entregar os scripts SQL utilizados para criação do banco.
