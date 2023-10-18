@@ -1,0 +1,35 @@
+create DATABASE SistemaBancario;
+-- Tabela Cliente
+CREATE TABLE Cliente (
+    nome VARCHAR(40) NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
+    data_de_nascimento DATE,
+    endereco_residencial VARCHAR(100),
+    telefone_de_contato VARCHAR(15)
+);
+-- Tabela Agências
+CREATE TABLE Agencias (
+    codigo_agencia INT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    endereco VARCHAR(100),
+    data_de_criacao DATE
+);
+-- Tabela Contas
+CREATE TABLE Contas (
+    codigo_conta INT PRIMARY KEY,
+    agencia_codigo INT,
+    dono_da_conta VARCHAR(40) NOT NULL,
+    saldo DECIMAL(10, 2),
+    tipo_da_conta VARCHAR(20),
+    FOREIGN KEY (agencia_codigo) REFERENCES Agencias(codigo_agencia)
+);
+
+-- Tabela Transações
+CREATE TABLE Transacoes (
+    tipo_da_transacao VARCHAR(20),
+    conta_origem INT,
+    valor DECIMAL(10, 2),
+    FOREIGN KEY (conta_origem) REFERENCES Contas(codigo_conta)
+);
+
+
