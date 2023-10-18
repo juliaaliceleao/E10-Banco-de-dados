@@ -1,14 +1,15 @@
 create DATABASE SistemaBancario;
+
 -- Tabela Cliente
-CREATE TABLE Cliente (
+CREATE TABLE clientes (
     nome VARCHAR(40) NOT NULL,
     cpf VARCHAR(11) NOT NULL,
     data_de_nascimento DATE,
     endereco_residencial VARCHAR(100),
     telefone_de_contato VARCHAR(15)
 );
--- Tabela Agências
-CREATE TABLE Agencias (
+-- Tabela agências
+CREATE TABLE agencias (
     codigo_agencia INT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     endereco VARCHAR(100),
